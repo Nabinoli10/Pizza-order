@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.pizzaorderingapp.HelloController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <hgap>10</hgap>
+    <vgap>8</vgap>
+
+    <Label text="Customer Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="nameInput" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+    <Label text="Mobile Number:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="mobileInput" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Size:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <CheckBox fx:id="xlSize" text="XL" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <CheckBox fx:id="lSize" text="L" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <CheckBox fx:id="mSize" text="M" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <CheckBox fx:id="sSize" text="S" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+
+    <Label text="Toppings:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField fx:id="toppingsInput" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Button text="Add" onAction="#handleAddButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <Button text="Update" onAction="#handleUpdateButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Button text="Delete" onAction="#handleDeleteButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <Button text="Clear" onAction="#handleClearButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+    <Button text="List" onAction="#handleListButtonAction" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+
+    <TableView fx:id="table" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="5">
+        <columns>
+            <TableColumn text="Customer Name" fx:id="nameColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Mobile Number" fx:id="mobileColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="mobileNumber" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Size" fx:id="sizeColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="size" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Toppings" fx:id="toppingsColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="toppings" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Total Bill" fx:id="totalBillColumn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="totalBill" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</GridPane>
